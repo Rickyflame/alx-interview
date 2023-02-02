@@ -1,17 +1,17 @@
-#!/bin/bash/python3
-"""lockboxes"""
+#!/usr/bin/python3
+'''Lockboxes'''
 
 
 def canUnlockAll(boxes):
-    visited = [False] * len(boxes)
+    n = len(boxes)
+    visited = [False] * n
     visited[0] = True
     stack = [0]
 
     while stack:
         box = stack.pop()
         for key in boxes[box]:
-            if key < len(boxes) and not visited[key]:
+            if key < n and not visited[key]:
                 visited[key] = True
                 stack.append(key)
 
-    return all(visited)
