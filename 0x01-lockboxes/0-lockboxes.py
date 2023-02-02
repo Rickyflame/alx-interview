@@ -15,3 +15,4 @@ def canUnlockAll(boxes):
                 visited[key] = True
                 stack.append(key)
 
+    return all(visited)
